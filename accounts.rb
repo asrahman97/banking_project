@@ -45,6 +45,7 @@ class Accounts < Customer
     database.each do |entry|
       file.write(entry)
     end
+    file.close
   end
 
   def transfer_money(old_checking, old_savings, checking, saving)
@@ -67,9 +68,7 @@ class Accounts < Customer
   end
 
   def account_info
-    puts @customer_number
-    puts @checkings
-    puts @savings
+    [@balance, @checkings, @savings]
   end
 end
 

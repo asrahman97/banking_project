@@ -74,7 +74,7 @@ end
 aladdin = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 69420)
 ash = Transactions.new("Ash", "Money", 54213, "123 Main", 3636, 69420)
 rico = Transactions.new("Rico", "Bra", 94836, "123 Main", 3636, 69420)
-test_transaction = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 69420)
+# test_transaction = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 69420)
 
 # ash.deposit_checkings(12345678)
 # aladdin.withdraw_checkings(345678)
@@ -82,4 +82,4 @@ test_transaction = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 
 # ash.withdraw_savings(9876543)
 
 # ash.transfer_checking(333)
-ash.transfer_savings(345)
+# ash.transfer_savings(345)

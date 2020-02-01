@@ -24,6 +24,12 @@ class Customer
       baseline_customer_number += next_index
     end
 
+    def get_customer_id(name)
+      File.open(File.dirname(__FILE__) + '/account_data/customer/txt', 'r') do |line|
+        p line.readlines
+      end
+    end
+
     def print_info
       puts @first_name
       puts @last_name
