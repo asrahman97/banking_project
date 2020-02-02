@@ -20,10 +20,9 @@ def menu(ash)
     puts "Address:"
     address = gets.strip.to_s
     account_name = Transactions.new(first_name, last_name, ssn, address, 0, 0)
-    accounts.push(account_name)
     puts "Processing..."
     sleep 1.0
-    puts "Welcome to Westpac Bank #{first_name} #{last_name}\nYour customer number is: #{account_name[:@customer_number]}"
+    puts "Welcome to Westpac Bank #{first_name} #{last_name}\nYour customer number is: #{@customer_number}"
 
   elsif input == 2
     puts "Please wait will we get your information"
