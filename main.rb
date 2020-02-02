@@ -22,7 +22,7 @@ def menu(ash)
     account_name = Transactions.new(first_name, last_name, ssn, address, 0, 0)
     puts "Processing..."
     sleep 1.0
-    puts "Welcome to Westpac Bank #{first_name} #{last_name}\nYour customer number is: #{@customer_number}"
+    puts "Welcome to Westpac Bank #{first_name} #{last_name}"
 
   elsif input == 2
     puts "Please wait will we get your information"
