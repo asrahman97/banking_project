@@ -23,8 +23,8 @@ class Transactions < Accounts
     old_balance = @checkings
     @checkings > 100 ?
         (@checkings -= amount_withdrawn
-    transaction_history("checking", old_balance, @checkings)
-    account_checking(@checkings, old_balance)) :
+        transaction_history("checking", old_balance, @checkings)
+        account_checking(@checkings, old_balance)) :
         (puts "Hey man, consider saving")
   end
 
@@ -39,8 +39,8 @@ class Transactions < Accounts
     old_savings = @savings
     @savings > 100 ?
         (@savings -= amount_deposited
-    transaction_history("savings", old_savings, @savings)
-    account_checking(@savings, old_savings)) :
+        transaction_history("savings", old_savings, @savings)
+        account_checking(@savings, old_savings)) :
         (puts "Hey dude, consider saving")
   end
 
@@ -66,6 +66,20 @@ class Transactions < Accounts
     ) : (puts "Hey bro, enter a smaller amount to transfer")
   end
 
+  def transfer_savings_other(amount, other)
+    old_savings = @savings
+    @savings -= amount
+    transaction_history("transfer_other to #{other}", old_savings, @savings)
+    transfer_money_other(old_savings, @savings, amount, other, 's')
+  end
+
+  def transfer_checkings_other(amount, other)
+    old_checkings = @checkings
+    @checkings -= amount
+    transaction_history("transfer_other to #{other}", old_checkings, @checkings)
+    transfer_money_other(old_checkings, @checkings, amount, other, 'c')
+  end
+
   def puts_hello
     puts "Hello"
   end
@@ -74,7 +88,11 @@ end
 aladdin = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 69420)
 ash = Transactions.new("Ash", "Money", 54213, "123 Main", 3636, 69420)
 rico = Transactions.new("Rico", "Bra", 94836, "123 Main", 3636, 69420)
-test_transaction = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 69420)
+# test_transaction = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 69420)
+
+# ash.transfer_savings_other(200, 1342)
+rico.transfer_checkings_other(333, 1335)
+
 
 # ash.deposit_checkings(12345678)
 # aladdin.withdraw_checkings(345678)
@@ -82,4 +100,4 @@ test_transaction = Transactions.new("Aladdin", "Omar", 12345, "123 Main", 3636, 
 # ash.withdraw_savings(9876543)
 
 # ash.transfer_checking(333)
-ash.transfer_savings(345)
+# ash.transfer_savings(345)
